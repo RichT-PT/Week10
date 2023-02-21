@@ -1,0 +1,111 @@
+<!-- Coding Steps:
+    • Using HTML, Bootstrap, and JavaScript create a single page website that contains the following:
+        ◦ A Bootstrap styled table representing your choice of data.
+        ◦ A Bootstrap styled form that allows a user to add a new row to the table when clicking on submit. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style3.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css" integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+  <script src="week10JS.js"></script>
+    <h3 class="display-3">West Tennessee Dive Rescue & Recovery</h3>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="diveBootstrap.html">WTDRR</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Our Sponsors</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="diveBootstrap.html">Return to WTDRR home page</a>
+              </li>
+                <li>
+                    <button type="button" class="btn btn-outline-primary"><a id="donationPage" href="donationPage.html">How you can help us</a></button>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-outline-primary"><a id="donationPage" href="donationPage.html">Donate to WTDRR</a></button>
+                </li>
+              </li>
+              <li class="nav-item">
+                <!-- <a class="nav-link disabled">Disabled</a> -->
+              </li>
+            </ul>
+            <form class="b-flex" role="search">
+              <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Role</th>
+            <th scope="col">Cert.LvL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>James (Jd)</td>
+            <td>Dunkle</td>
+            <td>President/Founder</td>
+            <td>N/A</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Steve</td>
+            <td>Deaton</td>
+            <td>Director</td>
+            <td>PSD</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Eric</td>
+            <td>Robertson</td>
+            <td>Public Liason/diver</td>
+            <td>PSD</td>
+          </tr>
+            <th scope="row">4</th>
+            <td>Richard (Rich)</td>
+            <td>Thompson</td>
+            <td>Diver/Surface Support</td>
+            <td>PSD</td>
+          <tr>
+            <th scope="row">5</th>
+            <td>Haley</td>
+            <td>Thompson</td>
+            <td>Surface support/comms</td>
+          </tr>
+        </tbody>
+      </table>
+      <form>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-3">
+            <input id="firstName" class="form-control form-control-sm" type="text" placeholder="First Name:">
+            </div>
+          <div class="row">
+            <div class="col-3">
+            <input id="lastName" class="form-control form-control-sm" type="text" placeholder="Last Name:">
+          
+          </div>
+          </div>
+          </div>
+        </div>
+      </form>
+</body>
