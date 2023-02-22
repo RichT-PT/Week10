@@ -1,0 +1,136 @@
+<!-- Coding Steps:
+    • Using HTML, Bootstrap, and JavaScript create a single page website that contains the following:
+        ◦ A Bootstrap styled table representing your choice of data.
+        ◦ A Bootstrap styled form that allows a user to add a new row to the table when clicking on submit. -->
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="style.css"/>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css" integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <title>Document</title>
+        </head>
+        
+        <body>
+          
+          
+            <h3 class="display-3">West Tennessee Dive Rescue & Recovery</h3>
+            <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="diveBootstrap.html">WTDRR</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Our Sponsors</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="diveBootstrap.html">Return to WTDRR home page</a>
+                      </li>
+                        <li>
+                            <button type="button" class="btn btn-outline-primary"><a id="donationPage" href="donationPage.html">How you can help us</a></button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-outline-primary"><a id="donationPage" href="donationPage.html">Donate to WTDRR</a></button>
+                        </li>
+                      </li>
+                      <li class="nav-item">
+                         <a class="nav-link disabled">Disabled</a> -->
+                      <!-- </li>
+                    </ul>
+                    <form class="b-flex" role="search">
+                      <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                  </div>
+                </div>
+              </nav> -->
+              <div id="root"></div>
+              <input id="firstName" placeholder="First Name"></input>
+              <button id="add" onclick="addMember()">Submit</button>
+<script>
+const tableHeaders = ["First Name", "Last Name", "Role", "Cert. Level"];
+const tableRows = [
+    {
+        firstName: "James",
+        lastName: "Dunkle",
+        role: "President",
+        certLevel: "PSD",
+    },
+    {
+        firstName: "Steve",
+        lastName: "Deaton",
+        role: "Director",
+        certLevel: "PSD",
+    },
+    {
+        firstName: "Eric",
+        lastName: "Robertson",
+        role: "Diver",
+        certLevel: "PSD",
+    }
+];console.log(tableHeaders);
+function addMember(){
+    const firstName = document.getElementById("firstName").value
+    const lastName = document.getElementById("lastName").value
+    const role = document.getElementById("role").value
+    const certLevel = document.getElementById("certLevel").value
+    const newMember = {
+        firstName,
+        lastName,
+        role,
+        certLevel,
+    }
+}
+
+function populateTable(tableBody) {    
+    const headerRow = document.createElement("tr");    //creates a header row in the table
+    for(const header of tableHeaders){                 //makes a variable header of table headers
+        const cell = document.createElement("td");// makes a variable called cell and creates an element
+                                                  // of table data
+        const text = document.createTextNode(header); //makes a variable text makes it equal to the return of the method createTextNode(header)
+        cell.appendChild(text);
+        headerRow.appendChild(cell);
+    }
+    tableBody.appendChild(headerRow);
+    //for each member, make a row
+    for (const member of tableRows){
+        const row = document.createElement("tr");
+        const values = Object.values(member);
+        console.log(member);
+        for(const value of values)   { //loops through
+            const cell = document.createElement("td");
+            const text = document.createTextNode(value);
+            cell.appendChild(text);
+            row.appendChild(cell);
+        }
+        tableBody.appendChild(row);
+    }
+}
+function createTable() {
+    const table = document.createElement("table");
+    const tableBody = document.createElement("tbody");
+
+    populateTable(tableBody);
+    
+    // make the columns for each member
+    // add data for each column
+    // add the row to the tableBody
+    
+    table.appendChild(tableBody);                // add tableBody to table
+    const root = document.getElementById("root");
+    root.appendChild(table);                     // add table to documents
+}
+const collection = document.body.children;
+console.log(collection);
+createTable();
+
+</script>
+    </body>
+</html>

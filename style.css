@@ -59,6 +59,10 @@ p{
     text-align: right;
    
 }
+td {
+    font-size: 1.5rem;
+    padding: 20px 10px 10px 15px;
+}
 
 
 
