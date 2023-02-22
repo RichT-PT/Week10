@@ -6,15 +6,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="week10JS.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style3.css"/>
+    <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css" integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
 <body>
-  <script src="week10JS.js"></script>
+  
     <h3 class="display-3">West Tennessee Dive Rescue & Recovery</h3>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -93,19 +94,29 @@
           </tr>
         </tbody>
       </table>
-      <form>
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-3">
-            <input id="firstName" class="form-control form-control-sm" type="text" placeholder="First Name:">
-            </div>
-          <div class="row">
-            <div class="col-3">
-            <input id="lastName" class="form-control form-control-sm" type="text" placeholder="Last Name:">
-          
-          </div>
-          </div>
-          </div>
-        </div>
-      </form>
+    <!-- <script src="week10JS.js"></script> -->
+    <div class="col-3">
+    <form id="form1" action="/form/submit" method="post">
+      <div>
+        <label>First Name:</label>
+        <input type="text" />
+      </div>
+      <div>
+        <label>Last Name:</label>
+        <input type="text" />
+      </div>
+      <div>
+        <label>Role:</label>
+        <input type="text" />
+      </div>
+      <div>
+        <label>Cert. Level:</label>
+        <input type="text" />
+      </div>
+      <div>
+        <button id="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</html> 
 </body>
