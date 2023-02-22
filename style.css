@@ -49,6 +49,16 @@ p{
 #donationPageH3{
     text_align: center;
 }
+#textrow{
+
+    height: 30px;
+    width: 120px;
+    padding: 2px 0 0px 20px;
+}
+#form1{
+    text-align: right;
+   
+}
 
 
 
