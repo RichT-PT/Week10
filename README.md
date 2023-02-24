@@ -2,3 +2,4 @@ Coding Steps:
     • Using HTML, Bootstrap, and JavaScript create a single page website that contains the following:
         ◦ A Bootstrap styled table representing your choice of data.
         ◦ A Bootstrap styled form that allows a user to add a new row to the table when clicking on submit.
+This repo has extra files in it that I was working with. Some are ways I tried to complete the assignment and decided to try a different path and made a new file some of them are ones that I am trying different methods for the same result to get a better understanding. I added the permalink for the individual files in my PDF document to help with this. In the future, I will try to make a repo just for the final assignment and a separate repo for the ones that get made in practice. I hope this isn't an issue. 
