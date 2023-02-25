@@ -64,18 +64,21 @@
                 <div>
                     <input id="certLevel" placeholder="Cert Level"></input>
                
-                   <button id="add" onclick="addMember()">Submit</button>
+                   <button id="add" onclick="addMember(), clearInput();">Submit</button>
+                   <!-- <input type= "button" value= "clear" onclick= "clearInput()">  -->
+                   <!--calls on the method for adding the member which starts the JS program-->
               </div> 
 <script>
-const tableHeaders = [
+     
+const tableHeaders = [        //object for the new member
     "First Name",
     "Last Name",
     "Role",
     "Cert. Level",
 ];
-let tableRows = [
+let tableRows = [     //this is the array for the existing data for visual purposes on only
     {
-        firstName: "James",
+        firstName: "James", 
         lastName: "Dunkle",
         role: "President",
         certLevel: "PSD",
@@ -94,30 +97,66 @@ let tableRows = [
     }
 ];console.log(tableHeaders);
 
-function addMember(){
+function addMember(){     //this method gets the data from the input form above as the user enters it, by id, then creates a variable with that value
     const firstName = document.getElementById("firstName").value;
     const lastName = document.getElementById("lastName").value;
     const role = document.getElementById("role").value;
     const certLevel = document.getElementById("certLevel").value;
 
-    const newMember = {
+    const newMember = {  //new member object in shorthand basically the same as saying the name of the property is the same as the name of the varible that declares it's value
         firstName,
         lastName,
         role,
         certLevel,
     };
-    tableRows.push(newMember);
+    tableRows.push(newMember);// adds the new member to the table row
     populateTable();
     
+   
+    
 }
-function clearTable(){
+function clearInput(){
+      var getValue= document.getElementById("firstName");
+        if (getValue.value !="") {
+            getValue.value = "";
+        }
+        var getValue= document.getElementById("lastName");
+        if (getValue.value !="") {
+            getValue.value = "";
+        }
+        var getValue= document.getElementById("role");
+        if (getValue.value !="") {
+            getValue.value = "";
+        }
+        var getValue= document.getElementById("certLevel");
+        if (getValue.value !="") {
+            getValue.value = "";
+        }
+
+
+
+ }
+// function clearForm(){
+    // let field = document.getElementByTag("input").value;
+    // field == "";
+// }
+// }
+// function clearInput(target){
+        // if (target.value== 'clear input'){
+            // target.value= "";
+    //    }
+    // }
+function clearTable(){ // this clears the existing table before populating it with the new entry to prevent the existing data from creating a duplicate table
     while (tableBody.firstChild){
     tableBody.removeChild(tableBody.firstChild);
+    
     }
 }
 
-function populateTable() {
+function populateTable() {//function that adds the input data into the table
     clearTable();
+    
+   
 
     const headerRow = document.createElement("tr");    //creates a header row in the table
     for(const header of tableHeaders){                 //makes a variable header of table headers
@@ -126,34 +165,34 @@ function populateTable() {
         cell.appendChild(text);
         headerRow.appendChild(cell);
     }
-    tableBody.appendChild(headerRow);
+    tableBody.appendChild(headerRow);//attaches the header row to the table body
     //for each member, make a row
     for (const member of tableRows){
         const row = document.createElement("tr");
         const values = Object.values(member);
         console.log(member);
-        for(const value of values)   { //loops through
+        for(const value of values)   { //loops through values of the object Member and creates a td (table data) cell for each value in the table row
             const cell = document.createElement("td");
             const text = document.createTextNode(value);
             cell.appendChild(text);
             row.appendChild(cell);
         }
-        tableBody.appendChild(row);
+        tableBody.appendChild(row);// takes the new row and appends it to the table body
     }
 }
 
-const table = document.createElement("table");
-const tableBody = document.createElement("tbody");
+const table = document.createElement("table");//creates a variable equal to the new table to be created
+const tableBody = document.createElement("tbody");// does the same for the table body
 
-populateTable(tableBody);
+populateTable(tableBody);//this calls the function and passes the table body into it 
     
     // make the columns for each member
     // add data for each column
     // add the row to the tableBody
     
 table.appendChild(tableBody);                // add tableBody to table
-const root = document.getElementById("root");
-root.appendChild(table);                     // add table to documents
+const root = document.getElementById("root");//createst the variable root by calling on the id root, which is the id of the parent div
+root.appendChild(table);                     // add table to main div in the document
 
 </script>
     </body>
